@@ -25,3 +25,9 @@ res.sendFile(path.join(__dirname, '/public/index.html'))
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
+
+
+// WHEN I click on an existing note in the list in the left-hand column
+// THEN that note appears in the right-hand column
+
+// You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
