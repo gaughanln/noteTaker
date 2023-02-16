@@ -27,10 +27,7 @@ const readAndAppend = (newNote, filePath) => {
     if (err) throw err;
     const notes = JSON.parse(data);
     notes.push(newNote);
-    // .then( () => {
-    //   getAndRenderNotes();
-    //   renderActiveNote();
-    // })
+   
     return fs.writeFile(filePath, JSON.stringify(notes), (err) => {
       if (err) throw err;
     });
@@ -59,3 +56,7 @@ router.post('/notes', (req, res) => {
 //bonus: delete requests
 
 module.exports = router
+
+// grab the id and update to delete - look at the event listeners for this info
+//will need to be written in apiroutes.js - READ DOCUMENTATION
+// 
