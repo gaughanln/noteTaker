@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const { v1: uuidv1 } = require('uuid');
+// const deleteNote = require('../public/assets/js/index')
 
 
 // "/notes"
@@ -52,8 +53,30 @@ router.post('/notes', (req, res) => {
   }
 });
 
-
 //bonus: delete requests
+const deleteFromFile = util.promisify(fs.unlink);
+//deleting a note from the JSON file and then returning the remaining notes
+const deleteNote = async (id) => {
+  // reading the contents of the db file
+  const data = await readFromFile('./db/db.json');
+  // parsing the db file into objects
+  const notes = JSON.parse(data);
+  // filtering out notes with an id that match the id related to the deleteNote function
+  const filteredNotes = notes.filter((note) => note.id !== id);
+  // deleting the file
+  await deleteFromFile('./db/db.json');
+  //adding the updated notes back to the file after the selected note has been deleted
+  await appendFile('./db/db.json', JSON.stringify(filteredNotes));
+  //returning the updated list of notes
+  return filteredNotes;
+};
+
+// delete route calling in the deleteNote() from the index.js
+router.delete('/notes/:id', (req, res) => {
+  const id = req.params.id;
+  deleteNote(id).then((notes) => res.json(notes));
+});
+
 
 module.exports = router
 
