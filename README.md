@@ -19,20 +19,15 @@ The following applies to API routes:
   * `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. 
 
 
-<!-- Video of application in progress -->
 ## End Product 
 
 <!-- screenshots -->
-Below are screenshots of the application in use
-![screenshot1](./assets/employeeRosterTestScreenshot.png)
-
-![screenshot2](./assets/employeeRosterApplicationScreenshot.png)
-
-![screenshot3](./assets/EmployeeRosterHTMLScreenshot.png)
+Below is a screenshot of the application in use
+![screenshot1](./Assets/applicationScreenshot.png)
 
 <!-- link -->
 ## Deployment
-Here is the [link](https://github.com/gaughanln/employeeRoster) to the deployed application
+Here is the [link](https://gaughanlnnotesaver.herokuapp.com/) to the deployed application
 
 ## Contributing
 Lindsey Gaughan (Me!) 
