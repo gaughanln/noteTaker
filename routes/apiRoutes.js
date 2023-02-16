@@ -7,7 +7,7 @@ const util = require('util');
 const { v1: uuidv1 } = require('uuid');
 
 
-"/notes"
+// "/notes"
 const readFromFile = util.promisify(fs.readFile);
 const appendFile = util.promisify(fs.appendFile);
 
