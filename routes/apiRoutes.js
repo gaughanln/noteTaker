@@ -4,6 +4,8 @@ const router = express.Router();
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
+const { v1: uuidv1 } = require('uuid');
+
 
 "/notes"
 const readFromFile = util.promisify(fs.readFile);
@@ -25,6 +27,10 @@ const readAndAppend = (newNote, filePath) => {
     if (err) throw err;
     const notes = JSON.parse(data);
     notes.push(newNote);
+    // .then( () => {
+    //   getAndRenderNotes();
+    //   renderActiveNote();
+    // })
     return fs.writeFile(filePath, JSON.stringify(notes), (err) => {
       if (err) throw err;
     });
@@ -39,9 +45,9 @@ router.post('/notes', (req, res) => {
   if (title && text) {
     const newNote = {
       title,
-      text
+      text,
+      id: uuidv1()
     }
-
     readAndAppend(newNote, './db/db.json');
     res.json('note added');
   } else {

@@ -2,7 +2,7 @@
 
 ## Description
 
-This application is used to write and sace notes using express.js back end and will save and retrieve note data from the JSON file.
+This application is used to write and save notes using express.js back end and will save and retrieve note data from the JSON file.
 
 ## Criteria:
 

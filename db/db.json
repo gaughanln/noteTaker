@@ -1,1 +1,4 @@
-[{"title":"Test Title","text":"Test text"},{"title":"peanut brittle","text":"Santa clause"},{"title":"dsa","text":"dsa"},{"title":"This is a test","text":"yay"}]
+[]
+
+// grab the id and update to delete - look at the event listeners for this info
+//will need to be written in apiroutes.js - READ DOCUMENTATION

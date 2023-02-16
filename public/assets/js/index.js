@@ -41,7 +41,7 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   });
-
+// EXTRA CREDIT
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -50,6 +50,7 @@ const deleteNote = (id) =>
     },
   });
 
+  // NOT USING
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
