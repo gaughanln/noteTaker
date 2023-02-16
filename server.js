@@ -4,7 +4,8 @@ const htmlRoutes = require('./routes/htmlRoutes')
 const path = require('path');
 // Bring in the routes apiRoutes + htmlRoutes
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
+const host = '0.0.0.0'
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use('/', htmlRoutes);
 app.get("*", (req, res) =>
 res.sendFile(path.join(__dirname, '/public/index.html'))
 );
-app.listen(PORT, () =>
+app.listen(PORT, host, () =>
   console.log(`App listening at http://localhost:${PORT}`)
 );
 
